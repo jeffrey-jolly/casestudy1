@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Login Page</title>
+</head>
+
+<body>
+
+    <form class="box" id="login" onsubmit="validate(redir);">
+
+        <h1>Login</h1>
+        <input type="text" id="log" name="" placeholder="Username" required>
+
+        <input type="password" id="password" name="" placeholder="Password" required>
+        <input type="submit" name="" value="Login">
+    </form>
+
+
+    <script>
+        let user = document.getElementById("log");
+        let pass = document.getElementById("password");
+
+        // Callback
+        function validate(redir) {
+            if ((user.value == "admin") && (pass.value == "12345")) {
+                console.log("True");
+                redir();
+            } else {
+                window.alert("Username or Password Incorrect");
+
+            }
+        }
+
+        function redir() {
+            location.replace("/home.html");
+        }
+        document.getElementById("login").addEventListener("submit", function(event) {
+            event.preventDefault()
+        });
+    </script>
+</body>
+
+</html>
