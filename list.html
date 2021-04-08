@@ -28,7 +28,7 @@
     <h2 style="font-size: 40px;">List</h2>
 
     <!-- /Navbar -->
-
+    <!-- Table -->
 
     <table class="table table-stripped table-hover table-bordered" id="table">
         <thead class="thead-black">
@@ -44,6 +44,7 @@
         </tbody>
 
     </table>
+    <!-- /Table -->
 
     <script>
         window.onload = ajax;
@@ -61,7 +62,7 @@
                         output += "<td>" + response[i].id + "</td>";
                         output += "<td>" + response[i].title + "</td>";
                         if (response[i].completed == false) {
-                            output += "<th>" + "<input type =\"checkbox\" id=" + i + " onclick = \"checkbox_check(" + i + ");\">" + "</input>" + "</th>";
+                            output += "<th>" + "<input type =\"checkbox\" id=" + i + " onclick = \"checkbox_check(" + i + ");\">" + "</input>" + "</th>"; //giving 'i' as id to each check boxes
                         } else {
                             output += "<th>" + "<input type =\"checkbox\" checked disabled>" + "</input>" + "</th>";
                         }
@@ -79,7 +80,7 @@
 
         function checkbox_check(t) {
             var checkbox = document.getElementById(t);
-            var promise = new Promise(function(resolve, reject) {
+            var promise = new Promise(function(resolve, reject) { //Promise
                 if (checkbox.checked == true) {
                     resolve();
                 } else {
